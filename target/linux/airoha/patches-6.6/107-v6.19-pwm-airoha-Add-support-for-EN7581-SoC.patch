@@ -35,9 +35,9 @@ Signed-off-by: Uwe Kleine-König <ukleinek@kernel.org>
 
 --- a/drivers/pwm/Kconfig
 +++ b/drivers/pwm/Kconfig
-@@ -51,6 +51,16 @@ config PWM_AB8500
- 	  To compile this driver as a module, choose M here: the module
- 	  will be called pwm-ab8500.
+@@ -63,6 +63,16 @@ config PWM_ADP5585
+ 	  This option enables support for the PWM function found in the Analog
+ 	  Devices ADP5585.
  
 +config PWM_AIROHA
 +	tristate "Airoha PWM support"
@@ -56,12 +56,12 @@ Signed-off-by: Uwe Kleine-König <ukleinek@kernel.org>
 +++ b/drivers/pwm/Makefile
 @@ -2,6 +2,7 @@
  obj-$(CONFIG_PWM)		+= core.o
- obj-$(CONFIG_PWM_SYSFS)		+= sysfs.o
  obj-$(CONFIG_PWM_AB8500)	+= pwm-ab8500.o
+ obj-$(CONFIG_PWM_ADP5585)	+= pwm-adp5585.o
 +obj-$(CONFIG_PWM_AIROHA)	+= pwm-airoha.o
  obj-$(CONFIG_PWM_APPLE)		+= pwm-apple.o
+ obj-$(CONFIG_PWM_ARGON_FAN_HAT)	+= pwm-argon-fan-hat.o
  obj-$(CONFIG_PWM_ATMEL)		+= pwm-atmel.o
- obj-$(CONFIG_PWM_ATMEL_HLCDC_PWM)	+= pwm-atmel-hlcdc.o
 --- /dev/null
 +++ b/drivers/pwm/pwm-airoha.c
 @@ -0,0 +1,622 @@
