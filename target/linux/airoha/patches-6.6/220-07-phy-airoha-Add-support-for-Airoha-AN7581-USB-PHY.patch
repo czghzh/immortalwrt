@@ -35,7 +35,7 @@ Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
 
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -652,6 +652,7 @@ M:	Christian Marangi <ansuelsmth@gmail.c
+@@ -776,6 +776,7 @@ M:	Christian Marangi <ansuelsmth@gmail.c
  L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
  S:	Maintained
  F:	Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.yaml
@@ -521,7 +521,7 @@ Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
 +}
 +
 +static struct phy *airoha_usb_phy_xlate(struct device *dev,
-+					struct of_phandle_args *args)
++					const struct of_phandle_args *args)
 +{
 +	struct airoha_usb_phy_priv *priv = dev_get_drvdata(dev);
 +	struct airoha_usb_phy_instance *instance = NULL;
